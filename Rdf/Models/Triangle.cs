@@ -7,9 +7,9 @@ namespace Rdf.Models
 {
     public class Triangle
     {
-        public double a { get; set; }
-        public double b { get; set; }
-        public double c { get; set; }
+        public int a { get; set; }
+        public int b { get; set; }
+        public int c { get; set; }
 
         public bool IsValidated => (a + b > c) && (b + c > a) && (c + a > b);
 
