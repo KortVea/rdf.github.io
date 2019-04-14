@@ -17,7 +17,7 @@ namespace Rdf.Models
         {
             if (a == 0 || b == 0 || c == 0 || !IsValidated)
             {
-                return "error";
+                return "Error";
             }
             else if (a == b && b == c)
             {
