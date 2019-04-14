@@ -11,8 +11,16 @@ namespace Rdf.Controllers
     {
         public string Get(string sentence)
         {
-            var charArray = sentence.ToCharArray().Reverse().ToArray();
-            return new string(charArray);
+            if (sentence != null)
+            {
+                var charArray = sentence.ToCharArray().Reverse().ToArray();
+                return new string(charArray);
+            }
+            else
+            {
+                return "";
+            }
+            
         }
     }
 }
