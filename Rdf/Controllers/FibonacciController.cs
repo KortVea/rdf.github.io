@@ -14,7 +14,7 @@ namespace Rdf.Controllers
         {
             try
             {
-                var result = new Fibonacci(n).GetNth(n);
+                var result = new Fibonacci(n).GetNth();
                 return Ok(result);
             }
             catch (OverflowException)

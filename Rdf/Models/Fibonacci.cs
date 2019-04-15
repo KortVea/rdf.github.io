@@ -7,14 +7,24 @@ namespace Rdf.Models
 {
     public class Fibonacci
     {
-        ulong[] memo;
+        long[] memo;
+        int input;
+        int nth => Math.Abs(input);
+        bool isNegative => input < 0 && input % 2 == 0;
 
         public Fibonacci(int n)
         {
-            memo = new ulong[n + 1];
+            input = n;
+            memo = new long[nth + 1];
         }
 
-        public ulong GetNth(int n)
+        public long GetNth()
+        {
+            var temp = GetNth(nth);
+            return isNegative ? -temp : temp;
+        }
+
+        long GetNth(int n)
         {
             if (memo[n] != 0) return memo[n];
 
