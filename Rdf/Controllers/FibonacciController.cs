@@ -10,9 +10,18 @@ namespace Rdf.Controllers
 {
     public class FibonacciController : ApiController
     {
-        public long Get(int n)
+        public IHttpActionResult Get(int n)
         {
-            return new Fibonacci(n).GetNth(n);
+            try
+            {
+                var result = new Fibonacci(n).GetNth(n);
+                return Ok(result);
+            }
+            catch (OverflowException)
+            {
+                return BadRequest();
+            }
+            
         }
     }
 }
